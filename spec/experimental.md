@@ -25,19 +25,22 @@ Strings, indicated by `str`, use the UTF-8 encoding.
 A Garlic file consists of a `Assembly` structure:
 ```
 Assembly {
-    magic              : u16;
-    major_version      : u16;
-    minor_version      : u16;
-    section_table_size : u16;
-    section_table      : SectionEntry[];
+    magic         : u16;
+    major_version : u16;
+    minor_version : u16;
+    segment_count : u16;
+    segment_table : Segment[];
 }
 ```
 
-### Sections
-The `SectionEntry` structure:
+### Segments
+\[TODO\]
+
+The `Segment` structure:
 ```
-SectionEntry {
+Segment {
     name_length : u16;
     name        : str;
-    index       : u16;
+    data_length : u32;
+    data        : u8[];
 }
